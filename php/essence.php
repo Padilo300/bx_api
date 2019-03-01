@@ -60,6 +60,7 @@ class essenceAdd extends transferData {
         $this->dealAdd          = $url . self::dealAdd           ;
         $this->dealGet          = $url . self::dealGet           ;
         $this->dealUpdata       = $url . self::dealUpdata        ;
+        $this->dealList         = $url . self::dealList          ;
 
         $this->diskFileGet      = $url . self::diskFileGet       ;
         

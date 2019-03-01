@@ -12,12 +12,16 @@ require_once(__DIR__ . '/php/essence.php'        ); // Создание лида
 //$webHookScript = 'https://bitrix24.com.ua/rest/1/epu7yjjk4i4q026j/';
 $webHookScript = 'ваш вебхук';
 
+$webHookScript = 'https://bitrix24.zachet.com.ua/rest/1/epu7yjjk4i4q026j/';
+
 $userfield  = 	new userField($webHookScript)	;
 $eseence	=   new essenceAdd($webHookScript)	;
 
 $listData   =   array(
-    'order'     =>   array("DATE_CREATE"    => "ASC"   ) ,
-    'select'    =>   array("ID") 
+    'order'  => array("STAGE_ID"    => "ASC"),
+    'filter' => array("CONTACT_ID"  => '23')  ,
+    'select' => array("*","UF_*"),
 );
-print_r($eseence->leadList($listData)) ;
+
+print_r($eseence->dealList($listData)) ;
 ?>
