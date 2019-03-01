@@ -46,7 +46,7 @@ class essenceAdd extends transferData {
 
     public function __construct($url){
         $this->leadAdd          = $url . self::leadAdd           ;
-        $this->upData           = $url . self::methodUpdata      ;
+        $this->upData           = $url . self::leadUpdata        ;
         $this->leadList         = $url . self::leadList          ;
 
         $this->userFieldList    = $url . self::listUserfiledList ;

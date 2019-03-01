@@ -8,11 +8,16 @@ require_once(__DIR__ . '/php/transferData.php'   ); // CURL
 require_once(__DIR__ . '/php/userField.php'      ); // Создание пользовательских полей
 require_once(__DIR__ . '/php/essence.php'        ); // Создание лида
 
+
+//$webHookScript = 'https://bitrix24.com.ua/rest/1/epu7yjjk4i4q026j/';
 $webHookScript = 'ваш вебхук';
 
 $userfield  = 	new userField($webHookScript)	;
 $eseence	=   new essenceAdd($webHookScript)	;
-$getFields	=	new getFields($webHookScript )	;
 
-$eseence->leadList();
+$listData   =   array(
+    'order'     =>   array("DATE_CREATE"    => "ASC"   ) ,
+    'select'    =>   array("ID") 
+);
+print_r($eseence->leadList($listData)) ;
 ?>

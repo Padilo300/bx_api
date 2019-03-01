@@ -3,13 +3,13 @@ class  transferData{
     public  $result           = null;
 
     /* Принимает знаения куда отправить и что отправить */
-    public function curlStart($queryUrl, $Data){
+    public function curlStart($queryUrl, $data){
         
        /*  echo 'давнные в нутри curlStart <br><hr>';
-        print_r($Data);
+        print_r($data);
         echo '<hr>'; */
-        //$this->writeToLog($Data, 'давнные в нутри curlStart') ; // Пишем логи
-        $Data = http_build_query($Data);
+        //$this->writeToLog($data, 'давнные в нутри curlStart') ; // Пишем логи
+        $data = http_build_query($data);
         $curl = curl_init(); // создаем ресурс 
 
         // установим несколько параметров в рамках одного сеанса 
@@ -19,7 +19,7 @@ class  transferData{
                     CURLOPT_HEADER         => 0, 
                     CURLOPT_RETURNTRANSFER => 1, 
                     CURLOPT_URL            => $queryUrl, 
-                    CURLOPT_POSTFIELDS     => $Data, 
+                    CURLOPT_POSTFIELDS     => $data, 
                     )
         ); 
 
@@ -27,7 +27,7 @@ class  transferData{
         curl_close($curl)                            ; // Закрываем соединение
         $result = json_decode($result, 1)            ; // Декодируем ответ
 
-        if($result['error']){
+        if( isset($result['error'])){
             $this->writeToLog($result, 'webform result') ; // Пишем логи
         }
 
