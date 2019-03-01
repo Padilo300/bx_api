@@ -12,8 +12,6 @@ require_once(__DIR__ . '/php/essence.php'        ); // Создание лида
 //$webHookScript = 'https://bitrix24.com.ua/rest/1/epu7yjjk4i4q026j/';
 $webHookScript = 'ваш вебхук';
 
-$webHookScript = 'https://bitrix24.zachet.com.ua/rest/1/epu7yjjk4i4q026j/';
-
 $userfield  = 	new userField($webHookScript)	;
 $eseence	=   new essenceAdd($webHookScript)	;
 
